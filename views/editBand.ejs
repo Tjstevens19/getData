@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="/editBand" method="POST">
+            <fieldset style="width: 0px;">
+                <legend>Edit Band:</legend>
+                    <input type="hidden" id="band_id" name="band_id" value="<%= mybands[0].band_id %>">
+                    <label for="band_name">Band name:</label>
+                    <input type="text" id="band_name" name="band_name" value="<%= mybands[0].band_name %>">
+                    <br><br>
+                    <label for="lead_singer">Lead singer:</label>
+                    <input type="text" id="lead_singer" name="lead_singer" value="<%= mybands[0].lead_singer %>">
+                    <br><br>
+                    <fieldset style="width: 100px;">
+                        <legend>Music Genre:</legend>
+                        <input type="radio" id="rock" name="music_genre" value="R" <%= mybands[0].music_genre == "R" ? "checked" : "" %>>
+                        <label for="rock">Rock</label><br>
+                        <input type="radio" id="newwave" name="music_genre" value="W" <%= mybands[0].music_genre == "W" ? "checked" : "" %>>
+                        <label for="newwave">New Wave</label><br>
+                        <input type="radio" id="country" name="music_genre" value="C" <%= mybands[0].music_genre == "C" ? "checked" : "" %>>
+                        <label for="country">Country</label>
+                        <br><br>
+                        <label for="still_rocking">Still Rockin' (Y/N):</label>
+                        <input type="checkbox" id="still_rocking" name="still_rocking" <%= mybands[0].still_rocking == "Y" ? "checked" : "" %>>
+                        <br><br>
+                        <label for="rating">Rating:</label>
+                        <input type="number" id="rating" name="rating" min="0" max="5" value="<%= mybands[0].rating %>">
+                    </fieldset>
+                    <br><br>                           
+                    <button type="submit">Save</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
